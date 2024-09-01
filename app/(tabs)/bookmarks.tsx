@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const Page = () => {
   return (
     <View style={styles.container}>
-      <Text>Page</Text>
+      <Text>Bookmarks</Text>
     </View>
   );
 };
