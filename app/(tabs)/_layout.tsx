@@ -19,7 +19,7 @@ export default function Layout() {
       }}
     >
       <Tabs.Screen
-        name='index'
+        name='home'
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name='compass' size={28} color={color} />
