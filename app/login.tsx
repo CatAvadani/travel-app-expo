@@ -5,7 +5,14 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import { auth } from '../config/firebase';
 
 const Login = () => {
@@ -56,6 +63,10 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
+      <Image
+        style={styles.image}
+        source={require('../assets/images/travel-logo.png')}
+      />
       <TextInput
         value={email}
         onChange={(e) => setEmail(e.nativeEvent.text)}
@@ -69,16 +80,25 @@ const Login = () => {
         secureTextEntry
         placeholder='Enter your password'
       />
-      <Pressable onPress={handleLogin} style={styles.buttonsContainer}>
-        <View style={styles.button}>
+      <View style={styles.buttonsContainer}>
+        <Pressable
+          android_ripple={{ color: '#c191f3' }}
+          onPress={handleLogin}
+          style={styles.button}
+        >
           <Text style={{ color: 'white' }}>Login</Text>
-        </View>
-      </Pressable>
-      <Pressable onPress={handleSignUp} style={styles.buttonsContainer}>
-        <View style={styles.secondaryButton}>
+        </Pressable>
+      </View>
+
+      <View style={styles.buttonsContainer}>
+        <Pressable
+          android_ripple={{ color: '#c191f3' }}
+          onPress={handleSignUp}
+          style={styles.secondaryButton}
+        >
           <Text style={{ color: 'blue' }}>Register</Text>
-        </View>
-      </Pressable>
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -90,6 +110,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#f6e3ff',
   },
   textInput: {
     borderRadius: 4,
@@ -111,12 +132,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   secondaryButton: {
-    backgroundColor: 'white',
+    backgroundColor: '#d8c8e9',
     borderRadius: 4,
     borderColor: 'blue',
     borderWidth: 1,
     padding: 8,
     marginVertical: 8,
     alignItems: 'center',
+  },
+  image: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
+    borderRadius: 100,
   },
 });
