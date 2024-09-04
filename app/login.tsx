@@ -14,6 +14,7 @@ import {
   View,
 } from 'react-native';
 import { auth } from '../config/firebase';
+import Colors from '../constants/Colors';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -82,7 +83,7 @@ const Login = () => {
       />
       <View style={styles.buttonsContainer}>
         <Pressable
-          android_ripple={{ color: '#c191f3' }}
+          android_ripple={{ color: Colors.rippleEffectColor }}
           onPress={handleLogin}
           style={styles.button}
         >
@@ -92,7 +93,7 @@ const Login = () => {
 
       <View style={styles.buttonsContainer}>
         <Pressable
-          android_ripple={{ color: '#c191f3' }}
+          android_ripple={{ color: Colors.rippleEffectColor }}
           onPress={handleSignUp}
           style={styles.secondaryButton}
         >
@@ -110,12 +111,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f6e3ff',
+    backgroundColor: '#e8defb',
   },
   textInput: {
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: Colors.primaryColor,
+    color: Colors.black,
     marginVertical: 8,
     padding: 8,
     fontSize: 16,
@@ -125,16 +127,16 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   button: {
-    backgroundColor: 'blue',
+    backgroundColor: Colors.primaryColor,
     borderRadius: 4,
     padding: 8,
     marginVertical: 8,
     alignItems: 'center',
   },
   secondaryButton: {
-    backgroundColor: '#d8c8e9',
+    backgroundColor: '#d4c8e9',
     borderRadius: 4,
-    borderColor: 'blue',
+    borderColor: Colors.primaryColor,
     borderWidth: 1,
     padding: 8,
     marginVertical: 8,
