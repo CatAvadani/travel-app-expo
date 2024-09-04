@@ -1,8 +1,9 @@
+import CategoryButtons from '@/components/CategoryButtons';
 import Colors from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { Stack } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   Pressable,
@@ -14,6 +15,13 @@ import {
 
 const Home = () => {
   const headerHeight = useHeaderHeight();
+  const [category, setCategory] = useState('All');
+
+  const onCategoryChange = (category: string) => {
+    setCategory(category);
+    console.log('Category:', category);
+  };
+
   return (
     <>
       <Stack.Screen
@@ -49,6 +57,7 @@ const Home = () => {
       />
       <View style={[styles.container, { paddingTop: headerHeight }]}>
         <Text style={styles.headingText}>Discover Your Next Adventure!</Text>
+        {/* Search Bar */}
         <View style={styles.searchContainer}>
           <View style={styles.searchBar}>
             <Ionicons name='search' size={18} color={Colors.primaryColor} />
@@ -67,6 +76,8 @@ const Home = () => {
             />
           </Pressable>
         </View>
+
+        <CategoryButtons onCategoryChange={onCategoryChange} />
       </View>
     </>
   );
