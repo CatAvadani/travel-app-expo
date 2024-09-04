@@ -1,6 +1,5 @@
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import React from 'react';
 import { View } from 'react-native';
 import Colors from '../../constants/Colors';
 
@@ -14,8 +13,8 @@ export default function Layout() {
           padding: 0,
         },
         tabBarShowLabel: false,
-        tabBarActiveTintColor: Colors.black,
-        tabBarInactiveTintColor: '#999',
+        tabBarActiveTintColor: Colors.primaryColor,
+        tabBarInactiveTintColor: '#998ae2',
       }}
     >
       <Tabs.Screen
@@ -40,14 +39,13 @@ export default function Layout() {
           tabBarIcon: ({ color }) => (
             <View
               style={{
-                backgroundColor: Colors.primaryColor,
-                paddingHorizontal: 16,
-                paddingVertical: 12,
+                // backgroundColor: Colors.secondaryColor,
+                padding: 12,
                 borderRadius: 10,
                 height: 50,
               }}
             >
-              <Ionicons name='search-outline' size={28} color={Colors.white} />
+              <Ionicons name='search-outline' size={28} color={color} />
             </View>
           ),
         }}

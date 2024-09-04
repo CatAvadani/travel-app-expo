@@ -5,8 +5,16 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import { auth } from '../config/firebase';
+import Colors from '../constants/Colors';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -56,6 +64,10 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
+      <Image
+        style={styles.image}
+        source={require('../assets/images/travel-logo.png')}
+      />
       <TextInput
         value={email}
         onChange={(e) => setEmail(e.nativeEvent.text)}
@@ -69,16 +81,25 @@ const Login = () => {
         secureTextEntry
         placeholder='Enter your password'
       />
-      <Pressable onPress={handleLogin} style={styles.buttonsContainer}>
-        <View style={styles.button}>
+      <View style={styles.buttonsContainer}>
+        <Pressable
+          android_ripple={{ color: Colors.rippleEffectColor }}
+          onPress={handleLogin}
+          style={styles.button}
+        >
           <Text style={{ color: 'white' }}>Login</Text>
-        </View>
-      </Pressable>
-      <Pressable onPress={handleSignUp} style={styles.buttonsContainer}>
-        <View style={styles.secondaryButton}>
+        </Pressable>
+      </View>
+
+      <View style={styles.buttonsContainer}>
+        <Pressable
+          android_ripple={{ color: Colors.rippleEffectColor }}
+          onPress={handleSignUp}
+          style={styles.secondaryButton}
+        >
           <Text style={{ color: 'blue' }}>Register</Text>
-        </View>
-      </Pressable>
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -90,11 +111,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#e8defb',
   },
   textInput: {
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: Colors.primaryColor,
+    color: Colors.black,
     marginVertical: 8,
     padding: 8,
     fontSize: 16,
@@ -104,19 +127,25 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   button: {
-    backgroundColor: 'blue',
+    backgroundColor: Colors.primaryColor,
     borderRadius: 4,
     padding: 8,
     marginVertical: 8,
     alignItems: 'center',
   },
   secondaryButton: {
-    backgroundColor: 'white',
+    backgroundColor: '#d4c8e9',
     borderRadius: 4,
-    borderColor: 'blue',
+    borderColor: Colors.primaryColor,
     borderWidth: 1,
     padding: 8,
     marginVertical: 8,
     alignItems: 'center',
+  },
+  image: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
+    borderRadius: 100,
   },
 });
