@@ -1,5 +1,7 @@
 import CategoryButtons from '@/components/CategoryButtons';
+import CategoryItems from '@/components/CategoryItems';
 import Colors from '@/constants/Colors';
+import { destinationsList } from '@/data/destinations';
 import { Ionicons } from '@expo/vector-icons';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { Stack } from 'expo-router';
@@ -47,7 +49,7 @@ const Home = () => {
             <Pressable onPress={() => {}} style={{ marginRight: 20 }}>
               <Ionicons
                 style={styles.notificationIcon}
-                name='notifications'
+                name="notifications"
                 size={20}
                 color={Colors.primaryColor}
               />
@@ -60,12 +62,12 @@ const Home = () => {
         {/* Search Bar */}
         <View style={styles.searchContainer}>
           <View style={styles.searchBar}>
-            <Ionicons name='search' size={18} color={Colors.primaryColor} />
-            <TextInput placeholder='Search...' />
+            <Ionicons name="search" size={18} color={Colors.primaryColor} />
+            <TextInput placeholder="Search..." />
           </View>
           <Pressable onPress={() => {}}>
             <Ionicons
-              name='options'
+              name="options"
               size={28}
               color={Colors.primaryColor}
               style={{
@@ -78,6 +80,8 @@ const Home = () => {
         </View>
 
         <CategoryButtons onCategoryChange={onCategoryChange} />
+
+        <CategoryItems destinations={destinationsList} />
       </View>
     </>
   );
