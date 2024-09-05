@@ -1,7 +1,9 @@
 import CategoryButtons from '@/components/CategoryButtons';
 import CategoryItems from '@/components/CategoryItems';
+import GroupDestinations from '@/components/GroupDestinations';
 import Colors from '@/constants/Colors';
 import { destinationsList } from '@/data/destinations';
+import { groupsDestinations } from '@/data/groups';
 import { Ionicons } from '@expo/vector-icons';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { Stack } from 'expo-router';
@@ -21,7 +23,6 @@ const Home = () => {
 
   const onCategoryChange = (category: string) => {
     setCategory(category);
-    console.log('Category:', category);
   };
 
   return (
@@ -81,7 +82,8 @@ const Home = () => {
 
         <CategoryButtons onCategoryChange={onCategoryChange} />
 
-        <CategoryItems destinations={destinationsList} />
+        <CategoryItems destinations={destinationsList} category={category} />
+        <GroupDestinations listings={groupsDestinations} />
       </View>
     </>
   );
@@ -96,8 +98,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.bgColor,
   },
   headingText: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 22,
+    fontWeight: '900',
     color: Colors.black,
     marginTop: 20,
   },
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   searchContainer: {
-    marginVertical: 20,
+    marginVertical: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
