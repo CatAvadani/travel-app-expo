@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import {
   Image,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -59,31 +60,33 @@ const Home = () => {
         }}
       />
       <View style={[styles.container, { paddingTop: headerHeight }]}>
-        <Text style={styles.headingText}>Discover Your Next Adventure!</Text>
-        {/* Search Bar */}
-        <View style={styles.searchContainer}>
-          <View style={styles.searchBar}>
-            <Ionicons name="search" size={18} color={Colors.primaryColor} />
-            <TextInput placeholder="Search..." />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text style={styles.headingText}>Discover Your Next Adventure!</Text>
+          {/* Search Bar */}
+          <View style={styles.searchContainer}>
+            <View style={styles.searchBar}>
+              <Ionicons name="search" size={18} color={Colors.primaryColor} />
+              <TextInput placeholder="Search..." />
+            </View>
+            <Pressable onPress={() => {}}>
+              <Ionicons
+                name="options"
+                size={28}
+                color={Colors.primaryColor}
+                style={{
+                  backgroundColor: Colors.secondaryColor,
+                  padding: 10,
+                  borderRadius: 5,
+                }}
+              />
+            </Pressable>
           </View>
-          <Pressable onPress={() => {}}>
-            <Ionicons
-              name="options"
-              size={28}
-              color={Colors.primaryColor}
-              style={{
-                backgroundColor: Colors.secondaryColor,
-                padding: 10,
-                borderRadius: 5,
-              }}
-            />
-          </Pressable>
-        </View>
 
-        <CategoryButtons onCategoryChange={onCategoryChange} />
+          <CategoryButtons onCategoryChange={onCategoryChange} />
 
-        <CategoryItems destinations={destinationsList} category={category} />
-        <GroupDestinations listings={groupsDestinations} />
+          <CategoryItems destinations={destinationsList} category={category} />
+          <GroupDestinations listings={groupsDestinations} />
+        </ScrollView>
       </View>
     </>
   );
@@ -98,8 +101,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.bgColor,
   },
   headingText: {
-    fontSize: 22,
-    fontWeight: '900',
+    fontSize: 28,
+    fontWeight: 'bold',
     color: Colors.black,
     marginTop: 20,
   },
