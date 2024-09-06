@@ -11,7 +11,7 @@ const Page = () => {
       .signOut()
       .then(() => {
         console.log('User signed out');
-        router.replace('/login');
+        router.replace('/');
       })
       .catch((error) => {
         console.log(error);
