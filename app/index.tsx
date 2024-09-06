@@ -72,14 +72,14 @@ const Login = () => {
         value={email}
         onChange={(e) => setEmail(e.nativeEvent.text)}
         style={styles.textInput}
-        placeholder='Enter your email'
+        placeholder="Enter your email"
       />
       <TextInput
         value={password}
         onChange={(e) => setPassword(e.nativeEvent.text)}
         style={styles.textInput}
         secureTextEntry
-        placeholder='Enter your password'
+        placeholder="Enter your password"
       />
       <View style={styles.buttonsContainer}>
         <Pressable

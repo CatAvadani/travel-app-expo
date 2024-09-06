@@ -25,9 +25,9 @@ export default function RootLayout() {
   console.log('RootLayout is rendered');
 
   return (
-    <Stack initialRouteName='login'>
-      <Stack.Screen name='login' options={{ headerShown: false }} />
-      <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+    <Stack initialRouteName="index">
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );
 }
