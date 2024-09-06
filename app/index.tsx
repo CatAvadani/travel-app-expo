@@ -66,7 +66,7 @@ const Login = () => {
     <View style={styles.container}>
       <Image
         style={styles.image}
-        source={require('../assets/images/travel-logo.png')}
+        source={require('../assets/images/logo-2.png')}
       />
       <TextInput
         value={email}
@@ -93,11 +93,11 @@ const Login = () => {
 
       <View style={styles.buttonsContainer}>
         <Pressable
-          android_ripple={{ color: Colors.rippleEffectColor }}
+          android_ripple={{ color: '#e7b19a' }}
           onPress={handleSignUp}
           style={styles.secondaryButton}
         >
-          <Text style={{ color: 'blue' }}>Register</Text>
+          <Text style={{ color: Colors.primaryColor }}>Register</Text>
         </Pressable>
       </View>
     </View>
@@ -111,12 +111,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#e8defb',
+    backgroundColor: '#d7edf7',
   },
   textInput: {
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: Colors.primaryColor,
+    borderColor: Colors.shadowColor,
     color: Colors.black,
     marginVertical: 8,
     padding: 8,
@@ -128,15 +128,17 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: Colors.primaryColor,
+    borderWidth: 1,
+    borderColor: Colors.primaryColor,
     borderRadius: 4,
     padding: 8,
     marginVertical: 8,
     alignItems: 'center',
   },
   secondaryButton: {
-    backgroundColor: '#d4c8e9',
+    backgroundColor: Colors.bgColor,
     borderRadius: 4,
-    borderColor: Colors.primaryColor,
+    borderColor: Colors.shadowColor,
     borderWidth: 1,
     padding: 8,
     marginVertical: 8,
@@ -146,6 +148,5 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     marginBottom: 20,
-    borderRadius: 100,
   },
 });
