@@ -26,7 +26,6 @@ const CategoryButton = ({ onCategoryChange }: CategoryButtonProps) => {
 
   return (
     <View>
-      <Text style={styles.title}>Categories</Text>
       <ScrollView
         ref={scrollRef}
         horizontal
@@ -55,7 +54,15 @@ const CategoryButton = ({ onCategoryChange }: CategoryButtonProps) => {
               size={20}
               color={Colors.primaryColor}
             />
-            <Text style={styles.categoryBtnText}>{category.title}</Text>
+            <Text
+              style={
+                activeIndex === index
+                  ? styles.categoryBtnTextActive
+                  : styles.categoryBtnText
+              }
+            >
+              {category.title}
+            </Text>
           </Pressable>
         ))}
       </ScrollView>
@@ -87,6 +94,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginLeft: 5,
     color: Colors.black,
+  },
+  categoryBtnTextActive: {
+    fontSize: 14,
+    marginLeft: 5,
+    color: Colors.white,
   },
   categoryBtnActive: {
     flexDirection: 'row',

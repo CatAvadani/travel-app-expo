@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, { useEffect } from 'react';
 import Colors from '@/constants/Colors';
-import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { useState } from 'react';
 
@@ -47,9 +47,9 @@ const CategoryItems = ({ destinations, category }: CategoryItemsProps) => {
           <View style={styles.item}>
             <Image source={{ uri: item.image }} style={styles.image} />
             <View style={styles.bookmark}>
-              <Ionicons
-                name="bookmark-outline"
-                size={20}
+              <MaterialCommunityIcons
+                name="heart-outline"
+                size={24}
                 color={Colors.white}
               />
             </View>

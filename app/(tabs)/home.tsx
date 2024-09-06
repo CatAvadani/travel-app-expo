@@ -4,7 +4,7 @@ import GroupDestinations from '@/components/GroupDestinations';
 import Colors from '@/constants/Colors';
 import { destinationsList } from '@/data/destinations';
 import { groupsDestinations } from '@/data/groups';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { Stack } from 'expo-router';
 import React, { useState } from 'react';
@@ -33,7 +33,7 @@ const Home = () => {
           headerTransparent: true,
           headerTitle: '',
           headerLeft: () => (
-            <Pressable onPress={() => {}} style={{ marginLeft: 20 }}>
+            <Pressable onPress={() => {}} style={styles.headerLeftContainer}>
               <Image
                 source={{
                   uri: 'https://images.pexels.com/photos/3764119/pexels-photo-3764119.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -45,6 +45,15 @@ const Home = () => {
                   borderRadius: 50,
                 }}
               />
+              <Text
+                style={{
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: 'bold',
+                }}
+              >
+                Hi, Cat!
+              </Text>
             </Pressable>
           ),
           headerRight: () => (
@@ -61,7 +70,9 @@ const Home = () => {
       />
       <View style={[styles.container, { paddingTop: headerHeight }]}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text style={styles.headingText}>Discover Your Next Adventure!</Text>
+          <Text style={styles.headingText}>
+            Let's Plan Your Prefect Gateway!
+          </Text>
           {/* Search Bar */}
           <View style={styles.searchContainer}>
             <View style={styles.searchBar}>
@@ -69,10 +80,10 @@ const Home = () => {
               <TextInput placeholder="Search..." />
             </View>
             <Pressable onPress={() => {}}>
-              <Ionicons
-                name="options"
+              <MaterialIcons
+                name="tune"
                 size={28}
-                color={Colors.primaryColor}
+                color={Colors.white}
                 style={{
                   backgroundColor: Colors.secondaryColor,
                   padding: 10,
@@ -85,6 +96,7 @@ const Home = () => {
           <CategoryButtons onCategoryChange={onCategoryChange} />
 
           <CategoryItems destinations={destinationsList} category={category} />
+
           <GroupDestinations listings={groupsDestinations} />
         </ScrollView>
       </View>
@@ -101,10 +113,16 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.bgColor,
   },
   headingText: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: Colors.black,
     marginTop: 20,
+  },
+  headerLeftContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 20,
+    gap: 10,
   },
   notificationIcon: {
     backgroundColor: Colors.white,
