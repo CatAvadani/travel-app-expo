@@ -1,7 +1,9 @@
 import CategoryButtons from '@/components/CategoryButtons';
 import CategoryItems from '@/components/CategoryItems';
+import GroupDestinations from '@/components/GroupDestinations';
 import Colors from '@/constants/Colors';
 import { destinationsList } from '@/data/destinations';
+import { groupsDestinations } from '@/data/groups';
 import { Ionicons } from '@expo/vector-icons';
 import { useHeaderHeight } from '@react-navigation/elements';
 import { Stack } from 'expo-router';
@@ -9,6 +11,7 @@ import React, { useState } from 'react';
 import {
   Image,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -21,7 +24,6 @@ const Home = () => {
 
   const onCategoryChange = (category: string) => {
     setCategory(category);
-    console.log('Category:', category);
   };
 
   return (
@@ -58,30 +60,33 @@ const Home = () => {
         }}
       />
       <View style={[styles.container, { paddingTop: headerHeight }]}>
-        <Text style={styles.headingText}>Discover Your Next Adventure!</Text>
-        {/* Search Bar */}
-        <View style={styles.searchContainer}>
-          <View style={styles.searchBar}>
-            <Ionicons name="search" size={18} color={Colors.primaryColor} />
-            <TextInput placeholder="Search..." />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text style={styles.headingText}>Discover Your Next Adventure!</Text>
+          {/* Search Bar */}
+          <View style={styles.searchContainer}>
+            <View style={styles.searchBar}>
+              <Ionicons name="search" size={18} color={Colors.primaryColor} />
+              <TextInput placeholder="Search..." />
+            </View>
+            <Pressable onPress={() => {}}>
+              <Ionicons
+                name="options"
+                size={28}
+                color={Colors.primaryColor}
+                style={{
+                  backgroundColor: Colors.secondaryColor,
+                  padding: 10,
+                  borderRadius: 5,
+                }}
+              />
+            </Pressable>
           </View>
-          <Pressable onPress={() => {}}>
-            <Ionicons
-              name="options"
-              size={28}
-              color={Colors.primaryColor}
-              style={{
-                backgroundColor: Colors.secondaryColor,
-                padding: 10,
-                borderRadius: 5,
-              }}
-            />
-          </Pressable>
-        </View>
 
-        <CategoryButtons onCategoryChange={onCategoryChange} />
+          <CategoryButtons onCategoryChange={onCategoryChange} />
 
-        <CategoryItems destinations={destinationsList} />
+          <CategoryItems destinations={destinationsList} category={category} />
+          <GroupDestinations listings={groupsDestinations} />
+        </ScrollView>
       </View>
     </>
   );
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.bgColor,
   },
   headingText: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
     color: Colors.black,
     marginTop: 20,
@@ -110,7 +115,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   searchContainer: {
-    marginVertical: 20,
+    marginVertical: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

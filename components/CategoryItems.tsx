@@ -6,9 +6,11 @@ import {
   Image,
   Text,
 } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Colors from '@/constants/Colors';
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
+import { useState } from 'react';
 
 interface Destination {
   id: number;
@@ -24,26 +26,67 @@ interface Destination {
 
 interface CategoryItemsProps {
   destinations: Destination[];
+  category: string;
 }
 
-const CategoryItems = ({ destinations }: CategoryItemsProps) => {
+const CategoryItems = ({ destinations, category }: CategoryItemsProps) => {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    console.log('Category:', category);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 200);
+  }, [category]);
+
   const renderItem = ({ item }: { item: Destination }) => {
     return (
-      <Pressable>
-        <View style={styles.item}>
-          <Image source={{ uri: item.image }} style={styles.image} />
-          <View style={styles.bookmark}>
-            <Ionicons name="bookmark-outline" size={20} color={Colors.white} />
+      <Link href={`/details/${item.id}`} asChild>
+        <Pressable>
+          <View style={styles.item}>
+            <Image source={{ uri: item.image }} style={styles.image} />
+            <View style={styles.bookmark}>
+              <Ionicons
+                name="bookmark-outline"
+                size={20}
+                color={Colors.white}
+              />
+            </View>
+            <Text
+              style={styles.itemText}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
+              {item.name}
+            </Text>
+            <View
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+            >
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}
+              >
+                <FontAwesome5
+                  name="map-marker-alt"
+                  size={18}
+                  color={Colors.secondaryColor}
+                />
+                <Text style={styles.itemsLocationText}>{item.location}</Text>
+              </View>
+              <Text style={styles.itemsPriceText}>{item.price}Kr</Text>
+            </View>
           </View>
-          <Text style={styles.itemText}>{item.name}</Text>
-        </View>
-      </Pressable>
+        </Pressable>
+      </Link>
     );
   };
   return (
     <View>
       <FlatList
-        data={destinations}
+        data={loading ? [] : destinations}
         renderItem={renderItem}
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -85,8 +128,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.black,
     marginBottom: 10,
+    width: 200,
+  },
+  itemsLocationText: {
+    fontSize: 14,
+    color: Colors.black,
+    marginLeft: 5,
+  },
+  itemsPriceText: {
+    fontSize: 14,
+    color: Colors.primaryColor,
+    fontWeight: 'bold',
   },
 });
-
-import category from '@/app/(tabs)/category';
-import { create } from 'react-test-renderer';

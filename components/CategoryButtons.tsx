@@ -33,7 +33,7 @@ const CategoryButton = ({ onCategoryChange }: CategoryButtonProps) => {
         contentContainerStyle={{
           gap: 10,
           paddingVertical: 10,
-          marginBottom: 10,
+          marginBottom: 5,
         }}
         showsHorizontalScrollIndicator={false}
       >
@@ -67,7 +67,7 @@ export default CategoryButton;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: '700',
     color: Colors.black,
   },

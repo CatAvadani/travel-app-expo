@@ -1,14 +1,14 @@
 export const destinationsList = [
   {
     id: 1,
-    name: 'Lakeside Haven',
+    name: 'Lakeside Haven Cabin Retreat',
     image:
       'https://images.unsplash.com/photo-1594017689643-bbf527bf4fbb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBhcmtzfGVufDB8fDB8fHww',
     description: 'A beautiful lakeside retreat',
     rating: 4.5,
     price: '200',
     duration: '3 days',
-    location: 'Lake District, UK',
+    location: 'Lake, UK',
     category: 'Parks',
   },
   {
@@ -32,7 +32,7 @@ export const destinationsList = [
     rating: 4.8,
     price: '100',
     duration: '2 days',
-    location: 'Banff, Canada',
+    location: 'Banff, CA',
     category: 'Parks',
   },
   {
@@ -44,7 +44,7 @@ export const destinationsList = [
     rating: 4.6,
     price: '15',
     duration: '1 day',
-    location: 'Amsterdam, Netherlands',
+    location: 'Amsterdam NL',
     category: 'Parks',
   },
   {
@@ -80,7 +80,7 @@ export const destinationsList = [
     rating: 4.7,
     price: '50',
     duration: '1 day',
-    location: 'Paris, France',
+    location: 'Paris FR',
     category: 'Sightseeing',
   },
   {
@@ -92,7 +92,7 @@ export const destinationsList = [
     rating: 4.9,
     price: '100',
     duration: '1 day',
-    location: 'Ontario, Canada',
+    location: 'Ontario CA',
     category: 'Sightseeing',
   },
   {
@@ -104,7 +104,7 @@ export const destinationsList = [
     rating: 4.7,
     price: '100',
     duration: '1 day',
-    location: 'Rome, Italy',
+    location: 'Rome IT',
     category: 'Tours',
   },
   {
@@ -116,7 +116,7 @@ export const destinationsList = [
     rating: 4.4,
     price: '50',
     duration: '3 hours',
-    location: 'Kyoto, Japan',
+    location: 'Kyoto JP',
     category: 'Tours',
   },
   {
@@ -140,7 +140,7 @@ export const destinationsList = [
     rating: 4.8,
     price: '80',
     duration: '1 day',
-    location: 'Paris, France',
+    location: 'Paris FR',
     category: 'Tours',
   },
   {
@@ -152,7 +152,7 @@ export const destinationsList = [
     rating: 4.9,
     price: '50',
     duration: '2 days',
-    location: 'Yosemite National Park, USA',
+    location: 'Yosemite USA',
     category: 'Camping',
   },
   {
@@ -164,7 +164,7 @@ export const destinationsList = [
     rating: 4.6,
     price: '120',
     duration: '3 days',
-    location: 'Sahara Desert, Morocco',
+    location: 'Sahara MC',
     category: 'Camping',
   },
   {
@@ -224,7 +224,7 @@ export const destinationsList = [
     rating: 4.8,
     price: '250',
     duration: '4 days',
-    location: 'Bora Bora, French Polynesia',
+    location: 'Bora Bora PF',
     category: 'Beaches',
   },
   {
@@ -236,7 +236,7 @@ export const destinationsList = [
     rating: 4.9,
     price: '400',
     duration: '7 days',
-    location: 'Phuket, Thailand',
+    location: 'Phuket TH',
     category: 'Beaches',
   },
   {
@@ -248,7 +248,7 @@ export const destinationsList = [
     rating: 4.3,
     price: '30',
     duration: '1 day',
-    location: 'Paris, France',
+    location: 'Paris FR',
     category: 'Museums',
   },
   {
