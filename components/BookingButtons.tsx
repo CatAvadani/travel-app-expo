@@ -1,6 +1,7 @@
 import Colors from '@/constants/Colors';
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import Animated, { SlideInDown } from 'react-native-reanimated';
 
 interface BookingButtonsProps {
   price?: string;
@@ -8,7 +9,10 @@ interface BookingButtonsProps {
 
 const BookingButtons = ({ price }: BookingButtonsProps) => {
   return (
-    <View style={styles.buttonContainer}>
+    <Animated.View
+      style={styles.buttonContainer}
+      entering={SlideInDown.delay(200)}
+    >
       <Pressable onPress={() => {}} style={styles.buttonBook}>
         <Text style={{ color: Colors.white, textTransform: 'uppercase' }}>
           Book Now
@@ -19,7 +23,7 @@ const BookingButtons = ({ price }: BookingButtonsProps) => {
           {price} kr
         </Text>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 

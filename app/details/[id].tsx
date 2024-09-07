@@ -9,21 +9,43 @@ import {
 } from '@expo/vector-icons';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
-import {
-  Dimensions,
-  Image,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Dimensions, Pressable, StyleSheet, Text, View } from 'react-native';
+import Animated, {
+  interpolate,
+  useAnimatedRef,
+  useAnimatedStyle,
+  useScrollViewOffset,
+} from 'react-native-reanimated';
 
 const { width } = Dimensions.get('window');
+const IMG_HEIGHT = 300;
 
 const DestinationDetails = () => {
   const { id } = useLocalSearchParams();
   const router = useRouter();
+  const scrollRef = useAnimatedRef<Animated.ScrollView>();
+  const scrollOffset = useScrollViewOffset(scrollRef);
+  const imageAnimatedStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateY: interpolate(
+            scrollOffset.value,
+            [-IMG_HEIGHT, 0, IMG_HEIGHT],
+            [-IMG_HEIGHT / 2, 0, IMG_HEIGHT * 0.75]
+          ),
+        },
+        {
+          scale: interpolate(
+            scrollOffset.value,
+            [-IMG_HEIGHT, 0, IMG_HEIGHT],
+            [2, 1, 1]
+          ),
+        },
+      ],
+    };
+  });
+
   const destinationInfo = destinationsList.find((d) => d.id === Number(id));
 
   return (
@@ -77,12 +99,12 @@ const DestinationDetails = () => {
         }}
       />
       <View style={styles.container}>
-        <ScrollView>
-          <Image
+        <Animated.ScrollView ref={scrollRef}>
+          <Animated.Image
             source={{ uri: destinationInfo?.image }}
-            style={styles.image}
+            style={[styles.image, imageAnimatedStyle]}
           />
-          <View style={{ padding: 16 }}>
+          <View style={{ padding: 16, backgroundColor: Colors.white }}>
             <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
               {destinationInfo?.name}
             </Text>
@@ -178,7 +200,7 @@ const DestinationDetails = () => {
               </Text>
             </View>
           </View>
-        </ScrollView>
+        </Animated.ScrollView>
         <BookingButtons price={destinationInfo?.price} />
       </View>
     </>
@@ -194,7 +216,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: width,
-    height: 300,
+    height: IMG_HEIGHT,
     objectFit: 'cover',
   },
   infoText: {
@@ -214,6 +236,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ede8e8',
+    backgroundColor: '#f4f0f0',
   },
 });
