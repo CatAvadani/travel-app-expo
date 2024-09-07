@@ -1,16 +1,15 @@
-import {
-  StyleSheet,
-  View,
-  FlatList,
-  Pressable,
-  Image,
-  Text,
-} from 'react-native';
-import React, { useEffect } from 'react';
 import Colors from '@/constants/Colors';
 import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import {
+  FlatList,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 interface Destination {
   id: number;
@@ -72,7 +71,7 @@ const CategoryItems = ({ destinations, category }: CategoryItemsProps) => {
                 <FontAwesome5
                   name="map-marker-alt"
                   size={18}
-                  color={Colors.secondaryColor}
+                  color={Colors.primaryColor}
                 />
                 <Text style={styles.itemsLocationText}>{item.location}</Text>
               </View>

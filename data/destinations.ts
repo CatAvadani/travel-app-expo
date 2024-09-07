@@ -3,11 +3,12 @@ export const destinationsList = [
     id: 1,
     name: 'Lakeside Haven Cabin Retreat',
     image:
-      'https://images.unsplash.com/photo-1594017689643-bbf527bf4fbb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBhcmtzfGVufDB8fDB8fHww',
-    description: 'A beautiful lakeside retreat',
+      'https://images.unsplash.com/photo-1466610549707-3c35c772f484?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFrZXNpZGV8ZW58MHx8MHx8fDA%3D',
+    description:
+      'A tranquil lakeside cabin perfect for those seeking a peaceful escape from city life. Enjoy fishing, kayaking, and stargazing at night.',
     rating: 4.5,
     price: '200',
-    duration: '3 days',
+    duration: '3',
     location: 'Lake, UK',
     category: 'Parks',
   },
@@ -15,11 +16,12 @@ export const destinationsList = [
     id: 2,
     name: 'Green Meadows Park',
     image:
-      'https://images.unsplash.com/photo-1621874743633-61f462bb69ff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhcmtzfGVufDB8fDB8fHww',
-    description: 'A vast, serene park with plenty of trails',
+      'https://images.unsplash.com/photo-1707694488968-a238e8c804d3?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JlZW4lMjBtZWFkb3dzJTIwcGFya3xlbnwwfHwwfHx8MA%3D%3D',
+    description:
+      'A sprawling park featuring lush meadows, walking trails, and picnic areas. Perfect for a day out with family and friends.',
     rating: 4.3,
     price: 'Free',
-    duration: '1 day',
+    duration: '1 ',
     location: 'Seattle, USA',
     category: 'Parks',
   },
@@ -27,12 +29,13 @@ export const destinationsList = [
     id: 3,
     name: 'Sunrise National Park',
     image:
-      'https://images.unsplash.com/photo-1647757550684-ec5e0cfe9022?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHBhcmtzfGVufDB8fDB8fHww',
-    description: 'Watch the sunrise over beautiful mountains',
+      'https://images.unsplash.com/photo-1542467986-13ac00f21339?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGl0Y2hlbiUyMHZhbGxleSUyMGNvdW50cnklMjBwYXJrfGVufDB8fDB8fHww',
+    description:
+      'A stunning national park where you can hike up to watch the sunrise over majestic mountains. A perfect getaway for nature lovers.',
     rating: 4.8,
     price: '100',
-    duration: '2 days',
-    location: 'Banff, CA',
+    duration: '2 ',
+    location: 'Banff, Canada',
     category: 'Parks',
   },
   {
@@ -40,11 +43,12 @@ export const destinationsList = [
     name: 'Riverfront Gardens',
     image:
       'https://images.unsplash.com/photo-1549417992-635001a6cd80?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhcmtzfGVufDB8fDB8fHww',
-    description: 'Relax by the riverside amidst lush greenery',
+    description:
+      'A beautiful riverside park where you can relax amongst vibrant greenery and enjoy serene walks along the riverbank.',
     rating: 4.6,
     price: '15',
-    duration: '1 day',
-    location: 'Amsterdam NL',
+    duration: '1 ',
+    location: 'Amsterdam, Netherlands',
     category: 'Parks',
   },
   {
@@ -52,10 +56,11 @@ export const destinationsList = [
     name: 'Skyline Lookout',
     image:
       'https://images.unsplash.com/photo-1620831098052-af1c8be659f9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNpZ2h0c2VlaW5nJTIwbW91bnRhaW5zfGVufDB8fDB8fHww',
-    description: 'Panoramic views from a mountain summit',
+    description:
+      'Take in breathtaking panoramic views of mountain ranges from this scenic lookout. Ideal for hiking and photography enthusiasts.',
     rating: 4.8,
     price: '150',
-    duration: '2 days',
+    duration: '2 ',
     location: 'Swiss Alps',
     category: 'Sightseeing',
   },
@@ -64,10 +69,11 @@ export const destinationsList = [
     name: 'Grand Canyon Overlook',
     image:
       'https://images.unsplash.com/photo-1542833278-f4deb3180291?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNpZ2h0c2VlaW5nJTIwbW91bnRhaW5zfGVufDB8fDB8fHww',
-    description: 'Breathtaking views of the Grand Canyon',
+    description:
+      'Experience the awe-inspiring views of the Grand Canyon. Perfect for outdoor enthusiasts looking for a day of exploration and wonder.',
     rating: 4.9,
     price: '75',
-    duration: '1 day',
+    duration: '1 ',
     location: 'Arizona, USA',
     category: 'Sightseeing',
   },
@@ -76,11 +82,12 @@ export const destinationsList = [
     name: 'Eiffel Tower View',
     image:
       'https://images.unsplash.com/photo-1701010593551-433e041eef38?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWZmZWx8ZW58MHx8MHx8fDA%3D',
-    description: 'Enjoy stunning views of Paris from the Eiffel Tower',
+    description:
+      'Enjoy iconic views of Paris from the top of the Eiffel Tower. A must-visit for first-time tourists and romantic getaways.',
     rating: 4.7,
     price: '50',
-    duration: '1 day',
-    location: 'Paris FR',
+    duration: '1 ',
+    location: 'Paris, France',
     category: 'Sightseeing',
   },
   {
@@ -88,11 +95,12 @@ export const destinationsList = [
     name: 'Niagara Falls Tour',
     image:
       'https://images.unsplash.com/photo-1533094602577-198d3beab8ea?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlhZ2FyYSUyMGZhbGxzfGVufDB8fDB8fHww',
-    description: 'Experience the mighty Niagara Falls up close',
+    description:
+      'Get up close and personal with the world-famous Niagara Falls. Feel the power of the falls as you explore the surrounding area.',
     rating: 4.9,
     price: '100',
-    duration: '1 day',
-    location: 'Ontario CA',
+    duration: '1',
+    location: 'Ontario, Canada',
     category: 'Sightseeing',
   },
   {
@@ -100,11 +108,12 @@ export const destinationsList = [
     name: 'Historical City Tour',
     image:
       'https://plus.unsplash.com/premium_photo-1688466338520-214516689a1e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b2xkJTIwY2l0eSUyMHRvdXJ8ZW58MHx8MHx8fDA%3D',
-    description: 'A journey through time in the old city',
+    description:
+      'Step back in time with a guided tour through one of the most historic cities. See landmarks, ruins, and learn about ancient civilizations.',
     rating: 4.7,
     price: '100',
-    duration: '1 day',
-    location: 'Rome IT',
+    duration: '1',
+    location: 'Rome, Italy',
     category: 'Tours',
   },
   {
@@ -112,11 +121,12 @@ export const destinationsList = [
     name: 'Cultural Walking Tour',
     image:
       'https://images.unsplash.com/photo-1541326782580-c5a85e661eb3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG9sZCUyMGNpdHklMjB0b3VyfGVufDB8fDB8fHww',
-    description: 'Explore the cultural highlights of the city',
+    description:
+      'Take a leisurely walk through the cultural heart of the city. Perfect for those wanting to learn more about the local traditions and history.',
     rating: 4.4,
     price: '50',
-    duration: '3 hours',
-    location: 'Kyoto JP',
+    duration: '3',
+    location: 'Kyoto, Japan',
     category: 'Tours',
   },
   {
@@ -124,155 +134,25 @@ export const destinationsList = [
     name: 'Island Hopping Adventure',
     image:
       'https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aXNsYW5kfGVufDB8fDB8fHww',
-    description: 'Discover the beauty of multiple islands in one trip',
+    description:
+      'Explore multiple stunning islands in one trip. Perfect for adventure seekers and beach lovers looking for a diverse experience.',
     rating: 4.9,
     price: '300',
-    duration: '4 days',
+    duration: '4',
     location: 'Greece',
     category: 'Tours',
   },
   {
     id: 12,
-    name: 'City of Lights Tour',
+    name: 'Wildlife Safari Expedition',
     image:
-      'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFyaXN8ZW58MHx8MHx8fDA%3D',
-    description: 'See Paris light up at night on a boat tour',
-    rating: 4.8,
-    price: '80',
-    duration: '1 day',
-    location: 'Paris FR',
-    category: 'Tours',
-  },
-  {
-    id: 13,
-    name: 'Forest Campfire',
-    image:
-      'https://images.unsplash.com/photo-1444124818704-4d89a495bbae?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D',
-    description: 'Experience a night under the stars',
-    rating: 4.9,
-    price: '50',
-    duration: '2 days',
-    location: 'Yosemite USA',
-    category: 'Camping',
-  },
-  {
-    id: 14,
-    name: 'Desert Camping Adventure',
-    image:
-      'https://images.unsplash.com/photo-1631635589499-afd87d52bf64?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D',
-    description: 'Explore the stunning desert landscape and camp overnight',
-    rating: 4.6,
-    price: '120',
-    duration: '3 days',
-    location: 'Sahara MC',
-    category: 'Camping',
-  },
-  {
-    id: 15,
-    name: 'Mountain Cabin Retreat',
-    image:
-      'https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzd8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D',
-    description: 'Stay in a cozy cabin surrounded by mountains',
-    rating: 4.8,
-    price: '90',
-    duration: '2 days',
-    location: 'Rocky Mountains, USA',
-    category: 'Camping',
-  },
-  {
-    id: 16,
-    name: 'Beachside Camp',
-    image:
-      'https://images.unsplash.com/photo-1523280988476-b7490bb036e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU0fHxjYW1waW5nfGVufDB8fDB8fHww',
-    description: 'Enjoy camping by the waves',
-    rating: 4.7,
-    price: '60',
-    duration: '2 days',
-    location: 'Maui, Hawaii',
-    category: 'Camping',
-  },
-  {
-    id: 17,
-    name: 'Tropical Beach Escape',
-    image:
-      'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVhY2h8ZW58MHx8MHx8fDA%3D',
-    description: 'Relax on the pristine white sands',
-    rating: 4.6,
-    price: '300',
-    duration: '5 days',
-    location: 'Maldives',
-    category: 'Beaches',
-  },
-  {
-    id: 18,
-    name: 'Golden Coastline',
-    image:
-      'https://images.unsplash.com/photo-1432889490240-84df33d47091?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJlYWNofGVufDB8fDB8fHww',
-    description: 'Bask in the golden sun of this famous beach',
-    rating: 4.5,
-    price: '180',
-    duration: '3 days',
-    location: 'California, USA',
-    category: 'Beaches',
-  },
-  {
-    id: 19,
-    name: 'Coral Bay Getaway',
-    image:
-      'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGJlYWNofGVufDB8fDB8fHww',
-    description: 'Snorkel in crystal clear waters on the coral reef',
+      'https://images.unsplash.com/photo-1521651201144-634f700b36ef?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FmYXJpfGVufDB8fDB8fHww',
+    description:
+      'Embark on a thrilling safari adventure to spot exotic wildlife in their natural habitats. Ideal for animal lovers and photography enthusiasts.',
     rating: 4.8,
     price: '250',
-    duration: '4 days',
-    location: 'Bora Bora PF',
-    category: 'Beaches',
-  },
-  {
-    id: 20,
-    name: 'White Sand Beach Resort',
-    image:
-      'https://plus.unsplash.com/premium_photo-1681582960523-2b5ba7ed2c20?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJlYWNofGVufDB8fDB8fHww',
-    description: 'A luxury beachfront resort with all amenities',
-    rating: 4.9,
-    price: '400',
-    duration: '7 days',
-    location: 'Phuket TH',
-    category: 'Beaches',
-  },
-  {
-    id: 21,
-    name: 'Art and History Museum',
-    image:
-      'https://images.unsplash.com/photo-1541264161754-445bbdd7de52?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG11c2V1bXxlbnwwfHwwfHx8MA%3D%3D',
-    description: 'Explore collections from ancient civilizations',
-    rating: 4.3,
-    price: '30',
-    duration: '1 day',
-    location: 'Paris FR',
-    category: 'Museums',
-  },
-  {
-    id: 22,
-    name: 'Modern Art Museum',
-    image:
-      'https://images.unsplash.com/photo-1519056312994-33952f238fac?q=80&w=2762&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description: 'Discover contemporary art from all over the world',
-    rating: 4.6,
-    price: '25',
-    duration: '1 day',
-    location: 'New York, USA',
-    category: 'Museums',
-  },
-  {
-    id: 23,
-    name: 'National History Museum',
-    image:
-      'https://plus.unsplash.com/premium_photo-1680101647775-1deb6c1bcecc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fG11c2V1bXxlbnwwfHwwfHx8MA%3D%3D',
-    description: 'Explore the natural history exhibits',
-    rating: 4.7,
-    price: '20',
-    duration: '1 day',
-    location: 'London, UK',
-    category: 'Museums',
+    duration: '3',
+    location: 'Maasai Mara, Kenya',
+    category: 'Tours',
   },
 ];

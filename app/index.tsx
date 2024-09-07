@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#d7edf7',
+    backgroundColor: Colors.bgColor,
   },
   textInput: {
     borderRadius: 4,
