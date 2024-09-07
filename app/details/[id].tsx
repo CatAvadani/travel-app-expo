@@ -13,6 +13,7 @@ import {
   Dimensions,
   Image,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -76,98 +77,108 @@ const DestinationDetails = () => {
         }}
       />
       <View style={styles.container}>
-        <Image source={{ uri: destinationInfo?.image }} style={styles.image} />
-        <View style={{ padding: 16 }}>
-          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
-            {destinationInfo?.name}
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}
-          >
-            <FontAwesome5
-              name="map-marker-alt"
-              size={18}
-              color={Colors.primaryColor}
-            />
-            <Text style={styles.locationText}>{destinationInfo?.location}</Text>
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginVertical: 20,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: 6,
-              }}
-            >
-              <View style={styles.icon}>
-                <MaterialCommunityIcons
-                  name="clock-time-three"
-                  size={22}
-                  color={Colors.primaryColor}
-                />
-              </View>
-              <View>
-                <Text style={{ color: 'gray', fontSize: 12 }}>Duration</Text>
-                <Text style={styles.infoText}>
-                  {destinationInfo?.duration} Days
-                </Text>
-              </View>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: 6,
-              }}
-            >
-              <View style={styles.icon}>
-                <Ionicons
-                  name="people-sharp"
-                  size={22}
-                  color={Colors.primaryColor}
-                />
-              </View>
-              <View>
-                <Text style={{ color: 'gray', fontSize: 12 }}>Person</Text>
-                <Text style={styles.infoText}>{destinationInfo?.duration}</Text>
-              </View>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: 6,
-              }}
-            >
-              <View style={styles.icon}>
-                <Ionicons name="star" size={20} color={Colors.primaryColor} />
-              </View>
-              <View>
-                <Text style={{ color: 'gray', fontSize: 12 }}>Rating</Text>
-                <Text style={styles.infoText}>{destinationInfo?.rating}</Text>
-              </View>
-            </View>
-          </View>
-          <View
-            style={{
-              marginVertical: 20,
-              justifyContent: 'space-between',
-            }}
-          >
-            <Text style={{ fontSize: 16, lineHeight: 25 }}>
-              {destinationInfo?.description}
+        <ScrollView>
+          <Image
+            source={{ uri: destinationInfo?.image }}
+            style={styles.image}
+          />
+          <View style={{ padding: 16 }}>
+            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
+              {destinationInfo?.name}
             </Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              <FontAwesome5
+                name="map-marker-alt"
+                size={18}
+                color={Colors.primaryColor}
+              />
+              <Text style={styles.locationText}>
+                {destinationInfo?.location}
+              </Text>
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                marginVertical: 20,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                <View style={styles.icon}>
+                  <MaterialCommunityIcons
+                    name="clock-time-three"
+                    size={22}
+                    color={Colors.primaryColor}
+                  />
+                </View>
+                <View>
+                  <Text style={{ color: 'gray', fontSize: 12 }}>Duration</Text>
+                  <Text style={styles.infoText}>
+                    {destinationInfo?.duration} Days
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                <View style={styles.icon}>
+                  <Ionicons
+                    name="people-sharp"
+                    size={22}
+                    color={Colors.primaryColor}
+                  />
+                </View>
+                <View>
+                  <Text style={{ color: 'gray', fontSize: 12 }}>Person</Text>
+                  <Text style={styles.infoText}>
+                    {destinationInfo?.duration}
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                <View style={styles.icon}>
+                  <Ionicons name="star" size={20} color={Colors.primaryColor} />
+                </View>
+                <View>
+                  <Text style={{ color: 'gray', fontSize: 12 }}>Rating</Text>
+                  <Text style={styles.infoText}>{destinationInfo?.rating}</Text>
+                </View>
+              </View>
+            </View>
+
+            <View
+              style={{
+                marginVertical: 20,
+                justifyContent: 'space-between',
+              }}
+            >
+              <Text style={{ fontSize: 16, lineHeight: 25 }}>
+                {destinationInfo?.description}
+              </Text>
+            </View>
           </View>
-        </View>
+        </ScrollView>
         <BookingButtons price={destinationInfo?.price} />
       </View>
     </>
