@@ -1,5 +1,8 @@
 import { useRouter } from 'expo-router';
-import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import {
   Image,
@@ -22,7 +25,7 @@ const Login = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log('User is signed in');
-        router.push('/home');
+        router.push('/(tabs)');
       } else {
         console.log('User is signed out');
       }
@@ -30,13 +33,12 @@ const Login = () => {
     return unsubscribe;
   }, []);
 
-  const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
+  const handleSignUp = () => {
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
-        router.push('/(tabs)');
+        router.push('/home');
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -51,7 +53,7 @@ const Login = () => {
         style={styles.image}
         source={require('../assets/images/logo-2.png')}
       />
-      <Text style={styles.title}>Please sign in to continue</Text>
+      <Text style={styles.title}>Please create account to continue</Text>
       <TextInput
         value={email}
         onChange={(e) => setEmail(e.nativeEvent.text)}
@@ -68,17 +70,17 @@ const Login = () => {
       <View style={styles.buttonsContainer}>
         <Pressable
           android_ripple={{ color: Colors.rippleEffectColor }}
-          onPress={handleLogin}
+          onPress={handleSignUp}
           style={styles.button}
         >
-          <Text style={{ color: 'white' }}>Sign In</Text>
+          <Text style={{ color: 'white' }}>Register</Text>
         </Pressable>
       </View>
       <View style={{ flexDirection: 'row', marginTop: 40 }}>
-        <Text>Don't have an account? </Text>
-        <Pressable onPress={() => router.push('/register')}>
+        <Text>Already have an account? </Text>
+        <Pressable onPress={() => router.push('/')}>
           <Text style={{ color: Colors.primaryColor, fontWeight: 'bold' }}>
-            Sign Up
+            Sign In
           </Text>
         </Pressable>
       </View>

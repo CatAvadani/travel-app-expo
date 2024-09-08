@@ -54,6 +54,7 @@ const Page = () => {
             keyExtractor={(item) =>
               item?.id?.toString() ?? Math.random().toString()
             }
+            showsVerticalScrollIndicator={false}
           />
         )}
       </View>

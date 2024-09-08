@@ -29,6 +29,7 @@ export default function RootLayout() {
     <FavoritesContextProvider>
       <Stack initialRouteName="index">
         <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="register" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
     </FavoritesContextProvider>
