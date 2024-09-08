@@ -21,10 +21,25 @@ import {
 const Home = () => {
   const headerHeight = useHeaderHeight();
   const [category, setCategory] = useState('All');
+  const [searchText, setSearchText] = useState('');
 
   const onCategoryChange = (category: string) => {
     setCategory(category);
   };
+
+  // Function to filter based on both category and search text
+  const filterDestinations = () => {
+    return destinationsList.filter((destination) => {
+      const matchesCategory =
+        category === 'All' || destination.category === category;
+      const matchesSearchText = destination.name
+        .toLowerCase()
+        .includes(searchText.toLowerCase());
+      return matchesCategory && matchesSearchText;
+    });
+  };
+
+  const filteredDestinations = filterDestinations();
 
   return (
     <>
@@ -71,13 +86,19 @@ const Home = () => {
       <View style={[styles.container, { paddingTop: headerHeight }]}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={styles.headingText}>
-            Let's Plan Your Prefect Gateway!
+            Let's Plan Your Perfect Getaway!
           </Text>
+
           {/* Search Bar */}
           <View style={styles.searchContainer}>
             <View style={styles.searchBar}>
               <Ionicons name="search" size={18} color={Colors.primaryColor} />
-              <TextInput placeholder="Search..." />
+              <TextInput
+                placeholder="Search..."
+                value={searchText}
+                onChangeText={(text) => setSearchText(text)}
+                style={{ flex: 1 }}
+              />
             </View>
             <Pressable onPress={() => {}}>
               <MaterialIcons
@@ -94,8 +115,16 @@ const Home = () => {
           </View>
 
           <CategoryButtons onCategoryChange={onCategoryChange} />
-
-          <CategoryItems destinations={destinationsList} category={category} />
+          {filteredDestinations.length === 0 ? (
+            <Text style={styles.emptyMessage}>
+              No destinations found, try a different search!
+            </Text>
+          ) : (
+            <CategoryItems
+              destinations={filteredDestinations}
+              category={category}
+            />
+          )}
 
           <GroupDestinations listings={groupsDestinations} />
         </ScrollView>
@@ -147,5 +176,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     marginRight: 10,
+  },
+  emptyMessage: {
+    textAlign: 'center',
+    marginVertical: 40,
+    fontSize: 16,
+    color: 'gray',
   },
 });
