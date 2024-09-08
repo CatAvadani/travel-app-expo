@@ -1,6 +1,7 @@
 import Colors from '@/constants/Colors';
 import { useFavoriteDestinations } from '@/store/FavoritesContext';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Link } from 'expo-router';
 import React from 'react';
 import {
   Dimensions,
@@ -20,47 +21,61 @@ const { width } = Dimensions.get('window');
 const FavoriteDestinationCard = ({
   destination,
 }: FavoriteDestinationCardProps) => {
-  const { toggleFavorite, favoritesDestinations } = useFavoriteDestinations();
+  const { toggleFavorite } = useFavoriteDestinations();
 
   const handlePress = () => {
     toggleFavorite(destination);
   };
 
   return (
-    <View style={styles.container}>
-      <View>
-        <Image style={styles.image} source={{ uri: destination.image }} />
-        <Pressable onPress={handlePress} style={styles.favoriteIcon}>
-          <MaterialCommunityIcons name="heart" size={20} color={Colors.white} />
-        </Pressable>
-      </View>
-      <View style={{ gap: 5 }}>
-        <Text style={styles.itemText} numberOfLines={1} ellipsizeMode="tail">
-          {destination.name}
-        </Text>
-        <View style={styles.location}>
-          <Ionicons name="location" size={20} color={Colors.primaryColor} />
-          <Text
-            style={styles.locationText}
-            numberOfLines={1}
-            ellipsizeMode="tail"
-          >
-            {destination.location}
-          </Text>
-        </View>
-
-        <View style={styles.ratings}>
-          <View style={styles.ratings}>
-            <Ionicons name="star" size={20} color={Colors.primaryColor} />
-            <Text style={styles.itemRating}>{destination.rating}</Text>
+    <Link href={`/details/${destination.id}`} asChild>
+      <Pressable>
+        <View style={styles.container}>
+          <View>
+            <Image style={styles.image} source={{ uri: destination.image }} />
+            <Pressable onPress={handlePress} style={styles.favoriteIcon}>
+              <MaterialCommunityIcons
+                name="heart"
+                size={20}
+                color={Colors.white}
+              />
+            </Pressable>
           </View>
-          <Text style={styles.price}>
-            {destination.price} Kr
-            <Text style={{ color: '#cececf', fontSize: 10 }}>/per person</Text>
-          </Text>
+          <View style={{ gap: 5 }}>
+            <Text
+              style={styles.itemText}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
+              {destination.name}
+            </Text>
+            <View style={styles.location}>
+              <Ionicons name="location" size={20} color={Colors.primaryColor} />
+              <Text
+                style={styles.locationText}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+              >
+                {destination.location}
+              </Text>
+            </View>
+
+            <View style={styles.ratings}>
+              <View style={styles.ratings}>
+                <Ionicons name="star" size={20} color={Colors.primaryColor} />
+                <Text style={styles.itemRating}>{destination.rating}</Text>
+              </View>
+              <Text style={styles.price}>
+                {destination.price} Kr
+                <Text style={{ color: '#cececf', fontSize: 10 }}>
+                  /per person
+                </Text>
+              </Text>
+            </View>
+          </View>
         </View>
-      </View>
-    </View>
+      </Pressable>
+    </Link>
   );
 };
 

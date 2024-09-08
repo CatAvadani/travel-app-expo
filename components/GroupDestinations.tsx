@@ -1,7 +1,14 @@
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
+import React from 'react';
+import {
+  Dimensions,
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 interface GroupDestinationsProps {
   id: string;
@@ -11,6 +18,8 @@ interface GroupDestinationsProps {
   reviews: number;
 }
 
+const { width } = Dimensions.get('window');
+
 const GroupDestinations = ({
   listings,
 }: {
@@ -18,12 +27,12 @@ const GroupDestinations = ({
 }) => {
   const renderItem = ({ item }: { item: GroupDestinationsProps }) => {
     return (
-      <View style={styles.item}>
+      <View style={styles.container}>
         <Image style={styles.image} source={{ uri: item.image }} />
-        <View>
+        <View style={styles.textOverlay}>
           <Text style={styles.itemText}>{item.name}</Text>
           <View style={styles.ratings}>
-            <Ionicons name="star" size={20} color={Colors.primaryColor} />
+            <Ionicons name="star" size={20} color={Colors.white} />
             <Text style={styles.itemRating}>{item.rating}</Text>
           </View>
         </View>
@@ -47,18 +56,14 @@ const GroupDestinations = ({
 export default GroupDestinations;
 
 const styles = StyleSheet.create({
-  image: {
-    width: 80,
-    height: 100,
-    borderRadius: 10,
-    marginRight: 10,
-  },
-  item: {
-    backgroundColor: 'white',
+  container: {
     flexDirection: 'row',
-    alignItems: 'center',
-    width: 290,
-    padding: 10,
+    width: width - 50,
+    marginHorizontal: 5,
+  },
+  image: {
+    width: '100%',
+    height: 150,
     borderRadius: 10,
     marginRight: 10,
   },
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 14,
     fontWeight: '600',
-    color: 'black',
+    color: Colors.white,
     marginBottom: 8,
   },
   ratings: {
@@ -80,7 +85,17 @@ const styles = StyleSheet.create({
   itemRating: {
     fontSize: 14,
     fontWeight: '600',
-    color: Colors.black,
+    color: Colors.white,
     marginLeft: 5,
+  },
+  textOverlay: {
+    position: 'absolute',
+    bottom: 0,
+    alignItems: 'flex-start',
+    padding: 10,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    borderRadius: 10,
   },
 });

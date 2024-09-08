@@ -24,20 +24,4 @@ export const destinationCategories = [
     title: 'Museums',
     iconName: 'bank',
   },
-  {
-    title: 'Parks',
-    iconName: 'tree',
-  },
-  {
-    title: 'Zoos',
-    iconName: 'paw',
-  },
-  {
-    title: 'Aquariums',
-    iconName: 'fish',
-  },
-  {
-    title: 'Restaurants',
-    iconName: 'food',
-  },
 ];
