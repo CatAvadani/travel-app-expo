@@ -7,7 +7,7 @@ export const destinationsList = [
     description:
       'A tranquil lakeside cabin perfect for those seeking a peaceful escape from city life. Enjoy fishing, kayaking, and stargazing at night.',
     rating: 4.5,
-    price: '200',
+    price: '2000',
     duration: '3',
     location: 'Lake, UK',
     category: 'Parks',
@@ -20,7 +20,7 @@ export const destinationsList = [
     description:
       'A sprawling park featuring lush meadows, walking trails, and picnic areas. Perfect for a day out with family and friends.',
     rating: 4.3,
-    price: 'Free',
+    price: '0',
     duration: '1 ',
     location: 'Seattle, USA',
     category: 'Parks',
@@ -33,7 +33,7 @@ export const destinationsList = [
     description:
       'A stunning national park where you can hike up to watch the sunrise over majestic mountains. A perfect getaway for nature lovers.',
     rating: 4.8,
-    price: '100',
+    price: '1000',
     duration: '2 ',
     location: 'Banff, Canada',
     category: 'Parks',
@@ -46,7 +46,7 @@ export const destinationsList = [
     description:
       'A beautiful riverside park where you can relax amongst vibrant greenery and enjoy serene walks along the riverbank.',
     rating: 4.6,
-    price: '15',
+    price: '1500',
     duration: '1 ',
     location: 'Amsterdam, Netherlands',
     category: 'Parks',
@@ -59,7 +59,7 @@ export const destinationsList = [
     description:
       'Take in breathtaking panoramic views of mountain ranges from this scenic lookout. Ideal for hiking and photography enthusiasts.',
     rating: 4.8,
-    price: '150',
+    price: '1500',
     duration: '2 ',
     location: 'Swiss Alps',
     category: 'Sightseeing',
@@ -72,7 +72,7 @@ export const destinationsList = [
     description:
       'Experience the awe-inspiring views of the Grand Canyon. Perfect for outdoor enthusiasts looking for a day of exploration and wonder.',
     rating: 4.9,
-    price: '75',
+    price: '1750',
     duration: '1 ',
     location: 'Arizona, USA',
     category: 'Sightseeing',
@@ -85,7 +85,7 @@ export const destinationsList = [
     description:
       'Enjoy iconic views of Paris from the top of the Eiffel Tower. A must-visit for first-time tourists and romantic getaways.',
     rating: 4.7,
-    price: '50',
+    price: '1500',
     duration: '1 ',
     location: 'Paris, France',
     category: 'Sightseeing',
@@ -98,7 +98,7 @@ export const destinationsList = [
     description:
       'Get up close and personal with the world-famous Niagara Falls. Feel the power of the falls as you explore the surrounding area.',
     rating: 4.9,
-    price: '100',
+    price: '1000',
     duration: '1',
     location: 'Ontario, Canada',
     category: 'Sightseeing',
@@ -111,7 +111,7 @@ export const destinationsList = [
     description:
       'Step back in time with a guided tour through one of the most historic cities. See landmarks, ruins, and learn about ancient civilizations.',
     rating: 4.7,
-    price: '100',
+    price: '1000',
     duration: '1',
     location: 'Rome, Italy',
     category: 'Tours',
@@ -124,7 +124,7 @@ export const destinationsList = [
     description:
       'Take a leisurely walk through the cultural heart of the city. Perfect for those wanting to learn more about the local traditions and history.',
     rating: 4.4,
-    price: '50',
+    price: '1500',
     duration: '3',
     location: 'Kyoto, Japan',
     category: 'Tours',
@@ -137,7 +137,7 @@ export const destinationsList = [
     description:
       'Explore multiple stunning islands in one trip. Perfect for adventure seekers and beach lovers looking for a diverse experience.',
     rating: 4.9,
-    price: '300',
+    price: '1300',
     duration: '4',
     location: 'Greece',
     category: 'Tours',
@@ -150,7 +150,7 @@ export const destinationsList = [
     description:
       'Embark on a thrilling safari adventure to spot exotic wildlife in their natural habitats. Ideal for animal lovers and photography enthusiasts.',
     rating: 4.8,
-    price: '250',
+    price: '1250',
     duration: '3',
     location: 'Maasai Mara, Kenya',
     category: 'Tours',
@@ -163,7 +163,7 @@ export const destinationsList = [
     description:
       'A tranquil lakeside cabin perfect for those seeking a peaceful escape from city life. Enjoy fishing, kayaking, and stargazing at night.',
     rating: 4.5,
-    price: '200',
+    price: '1200',
     duration: '3',
     location: 'Lake, UK',
     category: 'Parks',
@@ -176,7 +176,7 @@ export const destinationsList = [
     description:
       'A sprawling park featuring lush meadows, walking trails, and picnic areas. Perfect for a day out with family and friends.',
     rating: 4.3,
-    price: 'Free',
+    price: '0',
     duration: '1 ',
     location: 'Seattle, USA',
     category: 'Parks',
@@ -189,7 +189,7 @@ export const destinationsList = [
     description:
       'A stunning national park where you can hike up to watch the sunrise over majestic mountains. A perfect getaway for nature lovers.',
     rating: 4.8,
-    price: '100',
+    price: '1000',
     duration: '2 ',
     location: 'Banff, Canada',
     category: 'Parks',
@@ -202,7 +202,7 @@ export const destinationsList = [
     description:
       'Set up camp next to a peaceful mountain stream and enjoy the fresh air and nature’s tranquility. Ideal for hiking and fishing.',
     rating: 4.7,
-    price: '50',
+    price: '1500',
     duration: '3',
     location: 'Rocky Mountains, USA',
     category: 'Camping',
@@ -215,7 +215,7 @@ export const destinationsList = [
     description:
       'Escape to the desert and camp under the stars. This serene location offers the perfect mix of solitude and adventure.',
     rating: 4.6,
-    price: '150',
+    price: '1500',
     duration: '2',
     location: 'Sahara Desert, Morocco',
     category: 'Camping',
@@ -228,7 +228,7 @@ export const destinationsList = [
     description:
       'Camp among the treetops in this unique forest canopy campsite. Ideal for nature lovers who want a bird’s-eye view of the world below.',
     rating: 4.9,
-    price: '175',
+    price: '1750',
     duration: '3',
     location: 'Amazon Rainforest, Brazil',
     category: 'Camping',
@@ -241,7 +241,7 @@ export const destinationsList = [
     description:
       'Relax on the white sandy beaches of this tropical resort, with crystal-clear waters and beautiful sunsets.',
     rating: 4.8,
-    price: '400',
+    price: '4000',
     duration: '5',
     location: 'Maldives',
     category: 'Beaches',
@@ -254,7 +254,7 @@ export const destinationsList = [
     description:
       'Enjoy pristine golden beaches with luxury accommodations. Perfect for sunbathing, swimming, and water sports.',
     rating: 4.7,
-    price: '350',
+    price: '3500',
     duration: '4',
     location: 'Gold Coast, Australia',
     category: 'Beaches',
@@ -280,7 +280,7 @@ export const destinationsList = [
     description:
       'Discover ancient art and artifacts in this historic museum. Perfect for art lovers and history buffs.',
     rating: 4.7,
-    price: '25',
+    price: '1250',
     duration: '2',
     location: 'London, UK',
     category: 'Museums',
@@ -294,7 +294,7 @@ export const destinationsList = [
       'Explore the future of art in this cutting-edge gallery featuring immersive installations and digital artworks.',
     rating: 4.6,
     price: '40',
-    duration: '1',
+    duration: '1000',
     location: 'Tokyo, Japan',
     category: 'Museums',
   },
@@ -306,7 +306,7 @@ export const destinationsList = [
     description:
       'Discover the wonders of the natural world, from prehistoric fossils to ecosystems of the future.',
     rating: 4.9,
-    price: '30',
+    price: '1300',
     duration: '3',
     location: 'New York, USA',
     category: 'Museums',
@@ -319,7 +319,7 @@ export const destinationsList = [
     description:
       'Step back in time with a guided tour through one of the most historic cities. See landmarks, ruins, and learn about ancient civilizations.',
     rating: 4.7,
-    price: '100',
+    price: '1000',
     duration: '1',
     location: 'Rome, Italy',
     category: 'Tours',
@@ -332,7 +332,7 @@ export const destinationsList = [
     description:
       'Take a leisurely walk through the cultural heart of the city. Perfect for those wanting to learn more about the local traditions and history.',
     rating: 4.4,
-    price: '50',
+    price: '1500',
     duration: '3',
     location: 'Kyoto, Japan',
     category: 'Tours',
@@ -345,7 +345,7 @@ export const destinationsList = [
     description:
       'Explore multiple stunning islands in one trip. Perfect for adventure seekers and beach lovers looking for a diverse experience.',
     rating: 4.9,
-    price: '300',
+    price: '1300',
     duration: '4',
     location: 'Greece',
     category: 'Tours',
