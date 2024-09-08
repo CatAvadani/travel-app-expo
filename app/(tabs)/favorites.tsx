@@ -10,6 +10,14 @@ const Page = () => {
   const { favoritesDestinations } = useFavoriteDestinations();
   const router = useRouter();
 
+  if (!favoritesDestinations) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.emptyText}>Loading...</Text>
+      </View>
+    );
+  }
+
   return (
     <>
       <Stack.Screen
@@ -35,8 +43,8 @@ const Page = () => {
         }}
       />
       <View style={styles.container}>
-        {favoritesDestinations.length === 0 ? (
-          <Text style={styles.emptyText}>No bookmarked items</Text>
+        {!favoritesDestinations || favoritesDestinations.length === 0 ? (
+          <Text style={styles.emptyText}>Your List is Empty!</Text>
         ) : (
           <FlatList
             data={favoritesDestinations.filter((item) => item && item.id)}
@@ -62,9 +70,11 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   emptyText: {
-    fontSize: 18,
-    color: Colors.black,
+    fontSize: 28,
+    color: 'gray',
+    fontWeight: 'bold',
     textAlign: 'center',
+    marginTop: 50,
   },
 
   backButton: {
