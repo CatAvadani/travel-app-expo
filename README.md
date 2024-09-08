@@ -2,9 +2,8 @@
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20; justify-content: space-around;">
    <img src="assets/images/img5.jpg" alt="Splash Screen" width="150">
-     <img src="assets/images/img3.jpg" alt="Splash Screen" width="150">
-   <img src="assets/images/img1.jpg" alt="Splash Screen" width="150">
-     <img src="assets/images/img4.jpg" alt="Splash Screen" width="150">
+   <img src="assets/images/img4.jpg" alt="Splash Screen" width="150">
+   <img src="assets/images/img1.jpg" alt="Splash Screen" width="150">  
      <img src="assets/images/img2.jpg" alt="Splash Screen" width="150">
 </div>
 
@@ -12,12 +11,12 @@
 
 ### Description
 
-Bon Voyage is a travel app built with React Native and Expo. The app is designed to help users explore exciting travel destinations, save their favorites, and book trips. It also features Firebase authentication for user sign-up and login, and it provides real-time searching and filtering of travel options.
+Bon Voyage is a travel app built with React Native and Expo. The app is designed to help users explore exciting travel destinations,and save their favorites. It also features Firebase authentication for user sign-up and login, searching, and filtering of travel options.
 This app was built with the primary goal of learning and practicing React Native, and to apply and extend the knowledge I gained throughout my Front-End Development studies.
 
 ### Features
 
-   - Firebase Authentication: Sign up and login with email/password. (Social media authentication (Google, Facebook, Twitter) to be implemented.)
+   - Firebase Authentication: Sign up and login with email/password. *[Social media authentication (Google, Facebook, Twitter) to be implemented.]*
    - Browse Destinations
    - Search and Filter
    - Save Favorites
