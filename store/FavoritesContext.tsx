@@ -19,6 +19,7 @@ function FavoritesContextProvider(props: PropsWithChildren) {
   const [favoritesDestinations, setFavoritesDestinations] = useState<
     Destination[]
   >([]);
+  const [loading, setLoading] = useState(true);
 
   // Load favorites from local storage
   useEffect(() => {
@@ -30,6 +31,8 @@ function FavoritesContextProvider(props: PropsWithChildren) {
         }
       } catch (error) {
         console.log('An error occurred when loading from storage', error);
+      } finally {
+        setLoading(false);
       }
     };
     getFavorites();
@@ -46,10 +49,9 @@ function FavoritesContextProvider(props: PropsWithChildren) {
   const toggleFavorite = (item: Destination) => {
     setFavoritesDestinations((prev) => {
       if (prev.some((bookmark) => bookmark.id === item.id)) {
-        // Remove item if already bookmarked
         return prev.filter((bookmark) => bookmark.id !== item.id);
       } else {
-        // Add item to bookmarks
+        console.log('Adding favorite:', item);
         return [...prev, item];
       }
     });

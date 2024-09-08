@@ -1,6 +1,7 @@
 import BookingButtons from '@/components/BookingButtons';
 import Colors from '@/constants/Colors';
 import { destinationsList } from '@/data/destinations';
+import { useFavoriteDestinations } from '@/store/FavoritesContext';
 import {
   Feather,
   FontAwesome5,
@@ -46,7 +47,13 @@ const DestinationDetails = () => {
     };
   });
 
-  const destinationInfo = destinationsList.find((d) => d.id === Number(id));
+  const destination = destinationsList.find((d) => d.id === Number(id));
+  const { favoritesDestinations, toggleFavorite } = useFavoriteDestinations();
+
+  // Check if the destination is already a favorite
+  const isFavorite = favoritesDestinations.some(
+    (fav) => fav.id === destination?.id
+  );
 
   return (
     <>
@@ -59,17 +66,12 @@ const DestinationDetails = () => {
               onPress={() => {
                 router.back();
               }}
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.8)',
-                padding: 6,
-                borderRadius: 10,
-              }}
             >
               <View
                 style={{
                   backgroundColor: Colors.white,
-                  padding: 6,
-                  borderRadius: 10,
+                  padding: 8,
+                  borderRadius: 50,
                 }}
               >
                 <Feather name="arrow-left" size={20} />
@@ -78,21 +80,26 @@ const DestinationDetails = () => {
           ),
           headerRight: () => (
             <Pressable
-              onPress={() => {}}
+              onPress={() => destination && toggleFavorite(destination)}
               style={{
-                backgroundColor: 'rgba(255,255,255,0.8)',
                 padding: 6,
                 borderRadius: 10,
               }}
             >
               <View
                 style={{
-                  backgroundColor: Colors.white,
+                  backgroundColor: Colors.secondaryColor,
                   padding: 6,
-                  borderRadius: 10,
+                  borderRadius: 50,
+                  borderWidth: 2,
+                  borderColor: Colors.white,
                 }}
               >
-                <MaterialCommunityIcons name="heart-outline" size={20} />
+                <MaterialCommunityIcons
+                  name={isFavorite ? 'heart' : 'heart-outline'}
+                  size={20}
+                  color={Colors.white}
+                />
               </View>
             </Pressable>
           ),
@@ -101,12 +108,12 @@ const DestinationDetails = () => {
       <View style={styles.container}>
         <Animated.ScrollView ref={scrollRef}>
           <Animated.Image
-            source={{ uri: destinationInfo?.image }}
+            source={{ uri: destination?.image }}
             style={[styles.image, imageAnimatedStyle]}
           />
           <View style={{ padding: 16, backgroundColor: Colors.white }}>
             <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
-              {destinationInfo?.name}
+              {destination?.name}
             </Text>
             <View
               style={{
@@ -119,9 +126,7 @@ const DestinationDetails = () => {
                 size={18}
                 color={Colors.primaryColor}
               />
-              <Text style={styles.locationText}>
-                {destinationInfo?.location}
-              </Text>
+              <Text style={styles.locationText}>{destination?.location}</Text>
             </View>
             <View
               style={{
@@ -147,7 +152,7 @@ const DestinationDetails = () => {
                 <View>
                   <Text style={{ color: 'gray', fontSize: 12 }}>Duration</Text>
                   <Text style={styles.infoText}>
-                    {destinationInfo?.duration} Days
+                    {destination?.duration} Days
                   </Text>
                 </View>
               </View>
@@ -167,9 +172,7 @@ const DestinationDetails = () => {
                 </View>
                 <View>
                   <Text style={{ color: 'gray', fontSize: 12 }}>Person</Text>
-                  <Text style={styles.infoText}>
-                    {destinationInfo?.duration}
-                  </Text>
+                  <Text style={styles.infoText}>{destination?.duration}</Text>
                 </View>
               </View>
               <View
@@ -184,7 +187,7 @@ const DestinationDetails = () => {
                 </View>
                 <View>
                   <Text style={{ color: 'gray', fontSize: 12 }}>Rating</Text>
-                  <Text style={styles.infoText}>{destinationInfo?.rating}</Text>
+                  <Text style={styles.infoText}>{destination?.rating}</Text>
                 </View>
               </View>
             </View>
@@ -196,12 +199,12 @@ const DestinationDetails = () => {
               }}
             >
               <Text style={{ fontSize: 16, lineHeight: 25 }}>
-                {destinationInfo?.description}
+                {destination?.description}
               </Text>
             </View>
           </View>
         </Animated.ScrollView>
-        <BookingButtons price={destinationInfo?.price} />
+        <BookingButtons price={destination?.price} />
       </View>
     </>
   );
